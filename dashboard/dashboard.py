@@ -14,15 +14,19 @@ with st.sidebar:
     # Extract minimum and maximum dates from the dataset
     min_date = all_data['datetime'].min().date()
     max_date = all_data['datetime'].max().date()
-    selected_date_range = st.date_input("Select Date Range", min_value=min_date, max_value=max_date, value=(min_date, max_date))
+    # Date picker for start date
+    start_date = st.date_input("Start Date", min_value=min_date, max_value=max_date, value=min_date)
+
+    # Date picker for end date
+    end_date = st.date_input("End Date", min_value=min_date, max_value=max_date, value=max_date)
 
     
 st.header("Dashboard Air Quality")
 
 
-clean_combined_df = all_data[(all_data['datetime'] >= pd.to_datetime(selected_date_range[0])) & (all_data['datetime'] <= pd.to_datetime(selected_date_range[1]))]
+clean_combined_df = all_data[(all_data['datetime'] >= pd.to_datetime(start_date)) & (all_data['datetime'] <= pd.to_datetime(end_date))]
 
-st.subheader(f"Analysis of PM2.5 Levels from {selected_date_range[0]} to {selected_date_range[1]} at Multiple Stations")
+st.subheader(f"Analysis of PM2.5 Levels from {start_date} to {end_date} at Multiple Stations")
 
 with st.container():
     average_pm25_each_station = clean_combined_df.groupby('station')['PM2.5'].mean()
