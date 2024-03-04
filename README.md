@@ -30,4 +30,5 @@ Repository ini dibuat untuk memenuhi tugas akhir course dicoding Belajar Analisi
 4. runing the streamlit
    ` streamlit run dashboard/dashboard.py `
 
-   
+  ## Tautan
+[tautan dashboard](https://xuef7ekaphko9czlmsxxpw.streamlit.app/)
