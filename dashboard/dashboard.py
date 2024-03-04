@@ -127,8 +127,8 @@ with st.container():
     plt.figure(figsize=(16,8))
 
     # Plot summer_SO2 and winter_SO2
-    plt.bar(summer_dates, list(summer_SO2.values()), label='Summer SO2')
-    plt.bar(winter_dates, list(winter_SO2.values()), label='Winter SO2')
+    plt.bar(summer_dates, list(summer_SO2.values()), label='Summer SO2',width=20)
+    plt.bar(winter_dates, list(winter_SO2.values()), label='Winter SO2',width=20)
 
     # Add a legend
     plt.legend()
