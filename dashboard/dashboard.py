@@ -130,3 +130,5 @@ with st.container():
     plt.legend()
     
     st.pyplot(plt)
+    
+st.caption("Copyright (c) 2024 Bachtiar Arya Habibie")
